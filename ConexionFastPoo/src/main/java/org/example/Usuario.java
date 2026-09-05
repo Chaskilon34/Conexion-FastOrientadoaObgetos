@@ -1,14 +1,14 @@
+package org.example;
+
 public abstract class Usuario {
     private String nombre;
     private String correo;
 
-    // Constructor base
     public Usuario(String nombre, String correo) {
         this.nombre = nombre;
         this.correo = correo;
     }
 
-    // Getters y Setters
     public String getNombre() {
         return nombre;
     }
@@ -25,6 +25,5 @@ public abstract class Usuario {
         this.correo = correo;
     }
 
-    // Método abstracto: Abstracción (define QUÉ hace cada usuario, no CÓMO)
     public abstract void mostrarMenu();
 }
