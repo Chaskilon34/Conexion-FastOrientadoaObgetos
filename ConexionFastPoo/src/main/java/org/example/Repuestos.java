@@ -1,3 +1,7 @@
 package org.example;
 
-public class Rep
+public class Repuestos{
+    private nombre;
+    private precio;
+    private stock;
+}
