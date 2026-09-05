@@ -16,11 +16,11 @@ public class Main {
         }
 
         /// Parte de Inventario / Repuestos --- temporal para valida el correcto funcionamiento y que mis compañero lo pueden editar
-        System.out.println("=== Funcionamiento de repuestos e inventario  ===\n");
+        System.out.println("=== Funcionamiento de repuestos e inventario  ===   \n");
 
         /// crear obgetos inventario
         Inventario inventario = new Inventario();
-        inventario.agregarRepuesto(new Repuestos("Guaya de freno", 15000, 10));
+        inventario.agregarRepuesto(new Repuestos("Guaya de freno  ", 15000, 10));
         inventario.agregarRepuesto(new Repuestos("Bujía", 8000, 20));
 
        ///llamarlos metodos para revisar la lista

@@ -13,7 +13,7 @@ public class Inventario {
         listaRepuestos.add(repuesto);
         System.out.println("Repuesto agregado: " + repuesto.getNombre());
     }
-/// ver lista de repuestos isEmpty es un metodo interno del arraylist valida si la lista esta vacia o llena para votar el texto de no hay repuesto registrados
+/// ver lista de repuestos isEmpty es un metodo interno del arraylist valida si l a lista esta vacia o llena para votar el texto de no hay repuesto registrados
     public void listarRepuestos() {
         if (listaRepuestos.isEmpty()) {
             System.out.println("No hay repuestos registrados.");

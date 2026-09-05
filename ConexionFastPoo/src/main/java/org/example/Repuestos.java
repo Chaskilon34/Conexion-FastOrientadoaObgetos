@@ -11,7 +11,7 @@ public class Repuestos {
         this.stock = stock;
     }
 
-    /// Metodos GET
+    /// Metodos  GET
     public String getNombre() {
         return this.nombre;
     }

@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ConexionFastPoo.iml" filepath="$PROJECT_DIR$/.idea/modules/ConexionFastPoo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ConexionFastPoo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ConexionFastPoo.main.iml" />
     </modules>
   </component>
 </project>
