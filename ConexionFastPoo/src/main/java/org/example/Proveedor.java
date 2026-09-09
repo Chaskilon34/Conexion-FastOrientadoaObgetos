@@ -16,6 +16,29 @@ public class Proveedor extends Usuario {
         this.nombreLocal = nombreLocal;
     }
 
+    /// aca implementamos los 5 metodos abstractos ya declarod en java
+    @Override
+    public void realizarAccionPrincipal() {
+        System.out.println(getNombre() + " está publicando un nuevo repuesto.");
+    }
+
+    @Override
+    public String getRol() {
+        return "Proveedor";
+    }
+
+
+    /// muestra el dinero que an gastado en el local
+    @Override
+    public double calcularBeneficio(){
+        return 150000;
+    }
+
+    @Override
+    public boolean tienePermisoEspecial() {
+        return false;
+    }
+
     @Override
     public void mostrarMenu() {
         System.out.println("==========================================");
