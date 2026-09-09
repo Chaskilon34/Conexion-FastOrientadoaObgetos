@@ -27,7 +27,7 @@ public class Proveedor extends Usuario {
 
     @Override
     public double calcularBeneficio() {
-        return 15000; // dinero ganado simulado por venta
+        return 15000; /// dinero guardado
     }
 
     @Override
