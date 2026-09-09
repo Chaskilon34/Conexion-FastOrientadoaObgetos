@@ -16,6 +16,28 @@ public class Mecanico extends Usuario {
         this.taller = taller;
     }
 
+
+    /// 5 metodos abstracos ya declarados nuevos
+    @Override
+    public void realizarAccionPrincipal(){
+        System.out.println("busca un repuesto");
+    }
+
+    @Override
+    public String getRol(){
+        return "Mecánico";
+    }
+
+    @Override
+    public double calcularBeneficio(){
+        return 3.0;
+    }
+
+    @Override
+    public boolean tienePermisoEspecial() {
+        return false;
+    }
+
     @Override
     public void mostrarMenu() {
         System.out.println("==========================================");

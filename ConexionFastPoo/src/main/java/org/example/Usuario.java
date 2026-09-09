@@ -25,5 +25,11 @@ public abstract class Usuario {
         this.correo = correo;
     }
 
+    /// Agregue los 5 metodos de nuevo
+
     public abstract void mostrarMenu();
+    public abstract void realizarAccionPrincipal();
+    public abstract String getRol();
+    public abstract double calcularBeneficio();
+    public abstract boolean tienePermisoEspecial();
 }

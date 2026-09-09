@@ -15,6 +15,25 @@ public class Proveedor extends Usuario {
     public void setNombreLocal(String nombreLocal) {
         this.nombreLocal = nombreLocal;
     }
+    @Override
+    public void realizarAccionPrincipal() {
+        System.out.println(getNombre() + " está publicando un nuevo repuesto.");
+    }
+
+    @Override
+    public String getRol() {
+        return "Proveedor";
+    }
+
+    @Override
+    public double calcularBeneficio() {
+        return 15000; // dinero ganado simulado por venta
+    }
+
+    @Override
+    public boolean tienePermisoEspecial() {
+        return false;
+    }
 
     @Override
     public void mostrarMenu() {
