@@ -8,7 +8,7 @@ public class Main {
         Usuario[] usuarios = new Usuario[3];
         Scanner scanner = new Scanner(System.in);
         Inventario inventario = new Inventario();
-
+       /// poliformismo
        usuarios[0] = new Mecanico("Carlos Pérez", "carlos@taller.com", "Taller El Pits");
        usuarios[1] = new Proveedor("Distribuidora MotoRepuestos", "ventas@motorepuestos.com", "Local Central #4");
        usuarios[2] = new Administrador("Juan David", "admin@conexionparts.com", "Súper Admin");
@@ -17,7 +17,7 @@ public class Main {
         inventario.agregarRepuesto(new Repuestos("Guaya de freno", 15000, 10));
         inventario.agregarRepuesto(new Repuestos("Bujía", 8000, 20));
         inventario.agregarRepuesto(new Repuestos("Filtro de aceite", 12000, 15));
-
+        /// bucle de poliformismo
         for (Usuario u : usuarios) {
             u.mostrarMenu();
             System.out.println("Rol: " + u.getRol());
@@ -27,6 +27,7 @@ public class Main {
             System.out.println("¿Permiso Especial?: " + u.tienePermisoEspecial());
             System.out.println("\n------------------------------------------\n");
         }
+
         System.out.println("==========================================");
         System.out.println("     SISTEMA DE GESTIÓN DE REPUESTOS     ");
         System.out.println("==========================================");
