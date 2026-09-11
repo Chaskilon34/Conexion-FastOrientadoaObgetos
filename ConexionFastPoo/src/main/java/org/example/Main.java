@@ -18,6 +18,7 @@ public class Main {
         inventario.agregarRepuesto(new Repuestos("Bujía", 8000, 20));
         inventario.agregarRepuesto(new Repuestos("Filtro de aceite", 12000, 15));
 
+
         for (Usuario u : usuarios) {
             u.mostrarMenu();
             System.out.println("Rol: " + u.getRol());
@@ -27,45 +28,52 @@ public class Main {
             System.out.println("¿Permiso Especial?: " + u.tienePermisoEspecial());
             System.out.println("\n------------------------------------------\n");
         }
+
         System.out.println("==========================================");
         System.out.println("     SISTEMA DE GESTIÓN DE REPUESTOS     ");
         System.out.println("==========================================");
         System.out.println("¿Qué tipo de usuario eres?");
-        System.out.println("1. Mecánico");
-        System.out.println("2. Proveedor");
-        System.out.print("Selecciona una opción (1 o 2): ");
+        System.out.print("Escribe 'Mecanico' o 'Proveedor': ");
 
-        /// Parte de Inventario / Repuestos --- temporal para valida el correcto funcionamiento y que mis compañero lo pueden editar
-        System.out.println("=== Funcionamiento de repuestos e inventario  ===   \n");
-        int tipoUsuario = scanner.nextInt();
-        scanner.nextLine(); // Limpiar el buffer
+        String tipoTexto = scanner.nextLine();
 
-        /// crear obgetos inventario
-        Inventario Inventario = new Inventario();
+        // crear obgetos inventario
+
         inventario.agregarRepuesto(new Repuestos("Guaya de freno  ", 15000, 10));
         inventario.agregarRepuesto(new Repuestos("Bujía", 8000, 20));
-        Usuario usuario = null;
+        Usuario usuario;
 
-        ///llamarlos metodos para revisar la lista
+        //llamarlos metodos para revisar la lista
         inventario.listarRepuestos();
 
-        System.out.println("\nBuscando 'Bujía'...");
-        Repuestos encontrado = inventario.buscarPorNombre("Bujía");
-        if (encontrado != null) {
-            System.out.println("Encontrado: " + encontrado); ///encontro el objeto buscado antes con el metodo   inventario.buscarPorNombre
-            if (tipoUsuario == 1) {
-                usuario = new Mecanico("Mecánico", "mecanico@taller.com", "Taller Central");
-                System.out.println("\n Has iniciado sesión como MECÁNICO\n");
-            } else if (tipoUsuario == 2) {
-                usuario = new Proveedor("Proveedor", "proveedor@distribuidora.com", "Local Principal");
-                System.out.println("\n Has iniciado sesión como PROVEEDOR\n");
-            } else {
-                System.out.println("No se encontró el repuesto.");  ///lo que ejecuta el null cunado no encuentra nada
-                System.out.println("Opción no válida. Saliendo del sistema...");
-                scanner.close();
-                return;
-            }
 
+        if (tipoTexto.equalsIgnoreCase("Mecanico")) {
+            System.out.print("Ingresa tu nombre: ");
+            String nombre = scanner.nextLine();
+            System.out.print("Ingresa tu correo: ");
+            String correo = scanner.nextLine();
+            System.out.print("Ingresa tu taller: ");
+            String taller = scanner.nextLine();
+
+            usuario = new Mecanico(nombre, correo, taller);
+            System.out.println("\nHas iniciado sesión como MECÁNICO\n");
+
+        } else if (tipoTexto.equalsIgnoreCase("Proveedor")) {
+            System.out.print("Ingresa tu nombre: ");
+            String nombre = scanner.nextLine();
+            System.out.print("Ingresa tu correo: ");
+            String correo = scanner.nextLine();
+            System.out.print("Ingresa tu local: ");
+            String local = scanner.nextLine();
+
+            usuario = new Proveedor(nombre, correo, local);
+            System.out.println("\nHas iniciado sesión como PROVEEDOR\n");
+
+        } else {
+            System.out.println("Opción no válida. Saliendo...");
+            scanner.close();
+            return;
+        }
 
             boolean salir = false;
             while (!salir) {
@@ -76,13 +84,16 @@ public class Main {
 
                 switch (opcion) {
                     case 1:
-                        if (tipoUsuario == 1) {
+
+                        if (tipoTexto.equalsIgnoreCase("Mecanico")) {
 
                             System.out.print("Ingresa el nombre del repuesto a buscar: ");
                             String nombreBuscar = scanner.nextLine();
                             Repuestos Encontrado = inventario.buscarPorNombre(nombreBuscar);
-                            if (encontrado != null) {
-                                System.out.println("Encontrado: " + encontrado);
+
+                            if (Encontrado != null) {
+                                System.out.println("Encontrado: " + Encontrado);
+
                             } else {
                                 System.out.println("No se encontró el repuesto.");
                             }
@@ -103,7 +114,9 @@ public class Main {
                         break;
 
                     case 2:
-                        if (tipoUsuario == 1) {
+
+                        if (tipoTexto.equalsIgnoreCase("Mecanico")) {
+
 
                             System.out.println("PROVEEDORES DISPONIBLES:");
                             System.out.println("- Distribuidora MotoRepuestos");
@@ -118,7 +131,8 @@ public class Main {
                         break;
 
                     case 3:
-                        if (tipoUsuario == 1) {
+
+                        if (tipoTexto.equalsIgnoreCase("Mecanico")) {
 
                             System.out.println("CREAR ORDEN DE COMPRA");
                             System.out.print("Ingresa el nombre del repuesto: ");
@@ -159,4 +173,7 @@ public class Main {
             scanner.close();
             System.out.println("Sistema finalizado.");
         }
-    }}
+
+    }
+
+

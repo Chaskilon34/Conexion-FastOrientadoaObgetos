@@ -28,6 +28,7 @@ public class Repuestos {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     ///  validar que el precio no tenga ningun numero negativo
     public void setPrecio(int precio) {
         if (precio < 0) {
