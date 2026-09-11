@@ -2,24 +2,19 @@ package org.example;
 
 public class Administrador extends Usuario {
     private String nivelAcceso;
-
     private int publicacionesRevisadas; /// Nuevo atributo acomulador
-
 
     public Administrador(String nombre, String correo, String nivelAcceso) {
         super(nombre, correo);
         this.nivelAcceso = nivelAcceso;
-
         this.publicacionesRevisadas = 0; /// empieza en 0
-
     }
     public String getNivelAcesso() {
         return nivelAcceso;
     }
     public void setNivelAcesso(String nivelAcesso) {
-            this.nivelAcceso = nivelAcesso;
+        this.nivelAcceso = nivelAcesso;
     }
-
 
     public int getPublicacionesRevisadas() {
         return publicacionesRevisadas;
@@ -29,7 +24,6 @@ public class Administrador extends Usuario {
         publicacionesRevisadas++;
         System.out.println("Publicacion revisada. Total: " + publicacionesRevisadas);
     }
-
 
 
     /// Implementación de los 5 Métodos Abstractos, Como Usuario.java definió 5 métodos con abstract
@@ -45,10 +39,7 @@ public class Administrador extends Usuario {
 
     @Override
     public double calcularBeneficio() {
-
-        return 25000.0;
-
-
+        return publicacionesRevisadas; /// El beneficio equivale al total revisado
     }
 
     @Override
@@ -69,4 +60,3 @@ public class Administrador extends Usuario {
         System.out.println("0. Salir");
     }
 }
-
